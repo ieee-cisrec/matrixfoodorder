@@ -30,6 +30,13 @@ h1{
 	border-radius: 10px;
 	color:white;
 }
+h4{
+	font-family: arial;
+	margin-left: 30%;
+	margin-right: 30%;
+	border:black 2px solid;
+	border-radius:10px ;
+}
 .c1{
 	width:70%;
 	text-align: center;
@@ -81,6 +88,15 @@ h1{
 	text-align: center;
 	margin-top:150px;
 	
+}
+
+.ins{
+	font-style: italic;
+	color: gray;
+	font-family: arial;
+	margin-top: 50px;
+	margin-left: 23%;
+	margin-right: 23%;
 }
 .subclass{
 	text-align: center;
