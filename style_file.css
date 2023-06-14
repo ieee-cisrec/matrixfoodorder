@@ -5,12 +5,14 @@ body{
 
 }
 .banner{
-	background-image: url('backimage.jpg');
+	background-image: url('index_back.jpg');
+	background-attachment: fixed;
 	background-position: center;
-	height: 250px;
+	height: 430px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+	text-shadow: 3px 3px 3px black;
 }
 .content{
 	position: absolute;
@@ -32,25 +34,32 @@ h1{
 	color:white;
 }
 h4{
-	font-family: arial;
+	font-family: helvetica;
 	margin-left: 30%;
 	margin-right: 30%;
-	border:black 2px solid;
+	border: 2px solid;
 	border-radius:10px ;
+	color:white;
+	box-shadow: 4px 4px #404040;
+	background-color: orangered;
+	padding:13px 13px;
+	text-shadow: 2px 2px #333333;
 }
 h5{
 	color:red;
 }
 .c1{
-	width:70%;
+	width:auto;
+	color: white;
+	background-color: #1a1a1a;
 	text-align: center;
 	text-shadow: black;
-	border: blue 2px solid;
+	border:  2px solid;
 	border-radius: 2px;
 	padding-left: 10px;
 	box-sizing: border-box;
 	margin: auto;
-	border-style: dashed;
+	
 }
 .c3{
 	margin-top:70px;
@@ -124,7 +133,7 @@ h5{
 	border: none;
 	padding:15px 21px;
 	color : white;
-	font-size: 23px;
+	font-size: 16px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
