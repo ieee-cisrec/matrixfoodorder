@@ -8,7 +8,7 @@ body{
 	background-image: url('index_back.jpg');
 	background-attachment: fixed;
 	background-position: center;
-	height: 430px;
+	height: 460px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
@@ -35,28 +35,27 @@ h1{
 }
 h4{
 	font-family: helvetica;
-	margin-left: 30%;
-	margin-right: 30%;
-	border: 2px solid;
+	border: orangered 2px solid;
 	border-radius:10px ;
 	color:white;
 	box-shadow: 4px 4px #404040;
 	background-color: orangered;
-	padding:13px 13px;
+	padding:24px 20px;
 	text-shadow: 2px 2px #333333;
 }
 h5{
 	color:red;
 }
 .c1{
+	font-family: arial;
 	width:auto;
+	font-size: 11px;
 	color: white;
 	background-color: #1a1a1a;
 	text-align: center;
 	text-shadow: black;
 	border:  2px solid;
 	border-radius: 2px;
-	padding-left: 10px;
 	box-sizing: border-box;
 	margin: auto;
 	
@@ -71,15 +70,20 @@ h5{
 }
 
 .c2{
-	margin-top: 50px;
+	
 	font-size: 25px;
 	text-align: center;
     border: red 2px solid
 	border-style:dashed;
-	padding-left:20px;
 	margin:auto;
 	font-family:tahoma;
 	
+}
+.stacky{
+	background-color:#bfbfbf ;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-radius: 11px;
 }
 .order1{
 	color:green;
@@ -126,12 +130,12 @@ h5{
 }
 
 .button{
-	background-color: green;
+	background-color: blue;
 	font-family: monospace;
 	font-style: normal;
 	border-radius: 5px;
 	border: none;
-	padding:15px 21px;
+	padding:14px 19px;
 	color : white;
 	font-size: 16px;
 	text-align: center;
