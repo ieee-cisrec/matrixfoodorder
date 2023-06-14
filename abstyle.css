@@ -1,27 +1,22 @@
 body{
-	margin: 30px;
+  margin: 30px;
   margin-top: 5em;
-  background-image:url('index1_background.jpg');
-	background-attachment: fixed;
-	background-size: cover;
+
+
 }
 h1{
 	font-size: 50px;
 	text-align: center;
-	color: honeydew;
-	text-decoration:underline;
+	color: blue;
 	font-family: arial;
-	
-}
-h2{
-	color: white;
+	border: black 2px solid;
+	border-radius: 2em;
 }
 p{
 	text-align: center;
-	font-size: 19px;
-	font-family: cursive;
+	font-size: 17px;
+	font-family: tahoma;
 	word-spacing: 0.2em;
-	color: white;
 	
 }
 img{
@@ -36,7 +31,6 @@ h3{
 	font-weight: bolder;
 	font-family: tahoma;
 	font-size: 1.6em;
-	color: white;
 }
 .d1{
 	
@@ -51,8 +45,4 @@ h3{
 	text-align: center;
 
 }
-.insta{
-	color: skyblue;
-}
-
 
