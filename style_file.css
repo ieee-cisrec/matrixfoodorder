@@ -44,12 +44,15 @@ h4{
 	text-shadow: 2px 2px #333333;
 }
 h5{
-	color:red;
+	color:black;
+	font-size: 18px;
+	font-family: arial;
+	color: darkred;
 }
 .c1{
 	font-family: arial;
 	width:auto;
-	font-size: 10px;
+	font-size: 11px;
 	color: white;
 	background-color: #1a1a1a;
 	text-align: center;
@@ -81,10 +84,9 @@ h5{
 }
 .stacky{
 	background-color:#f2f2f2 ;
-	margin-left: 7%;
-	margin-right: 7%;
+	margin-left: 10%;
+	margin-right: 10%;
 	border-radius: 11px;
-
 }
 .order1{
 	color:green;
@@ -136,9 +138,9 @@ h5{
 	font-style: normal;
 	border-radius: 5px;
 	border: none;
-	padding:19px 23px;
+	padding:14px 19px;
 	color : white;
-	font-size: 21px;
+	font-size: 17px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
