@@ -30,7 +30,7 @@ body{
   -webkit-filter: blur(8px);}
 	50%{color:white;
 		font-size: 30px;
-		text-shadow: none
+		text-shadow: none;
 	filter: blur(8px);
   -webkit-filter: blur(8px);}
 	70%{
