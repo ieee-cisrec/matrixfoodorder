@@ -46,6 +46,7 @@ body{
 .card{
 	border-radius:7px;
 	font-family: "Cambria";
+	position:fixed;
 }
 .card ul {
   list-style-type: none;
