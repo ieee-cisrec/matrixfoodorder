@@ -24,23 +24,21 @@ body{
 }
 @keyframes color-change{
 	0%{color:white;
-		font-size:5px;
 		text-shadow: none;
 		filter: blur(8px);
   -webkit-filter: blur(8px);}
 	50%{color:white;
-		font-size: 30px;
-		text-shadow: none
+		text-shadow: none;
 	filter: blur(8px);
   -webkit-filter: blur(8px);}
 	70%{
 		  color:white;
-			text-shadow:white 2px 2px;
+		  text-shadow:white 2px 2px;
 	}
 	100%{
-			color:white;
-			text-shadow:white 2px 2px;
-			font-size: 30px;}
+		color:white;
+		text-shadow:white 2px 2px;
+			}
 	
 }
 .card{
