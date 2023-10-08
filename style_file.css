@@ -271,8 +271,8 @@ margin-right: auto;
 }
 .gu p{
 	text-align: center;
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 10%;
+	margin-right: 10%;
 	font-family: arial;
 	color: #595959;
 	border-radius: 7px;
@@ -280,7 +280,7 @@ margin-right: auto;
 	background-color: white;
 	word-spacing: 1.0px;
 	display:none;
-	padding:18px;
+	
 }
 .head{
 	color: orangered;
