@@ -21,7 +21,7 @@ Enjoy your convenient food ordering!<br><br>`;
     }}
 function order(){
     alert(`Please fill the form correctly! \n
-           \n Conformation message will be sent to your email
+           Conformation message will be sent to your email\n
            For any ordering issues only \n
            Contact: +91 6383577376 , +91 9095779297 \n
            [Not for any other purpose]`);
