@@ -22,6 +22,10 @@ body{
 	animation-delay: 0s;
 	float:right;
 }
+.tot{
+  animation: color-change 1s Linear ;
+  animation-delay: 0s;
+}
 @keyframes color-change{
 	0%{color:white;
 		text-shadow: none;
