@@ -5,12 +5,17 @@
 	<link rel="icon"  href="matrix_icon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style_file.css">
+	<script type="text/javascript" src="script.js"></script>
+  
 
 
 	<title>Matrix Food Order</title>
 </head>
 <body>
+	
+   
 	<header>
+
 
 		<!-- banner-->
 
@@ -39,7 +44,11 @@
 	<main>
 		<!--HOME-->
 		<div class = "wel" id = "home">
+		   
 			<h1>Welcome to <br>MATRIX FOOD ORDER</h1>
+			<div class="gu">
+			<button onclick="guidelines()" id = "butg">READMORE</button>
+		    <p id = "gui"></p></div>
 		</div>
 		<div class = "orderonline">
 			<img src="orderonline.jpg">
@@ -69,8 +78,8 @@
 		<div style="background-image: url('cardback1.jpeg');" class = "ihot">
 			<div class = "hotelname">
 			<h2>PANDIAN HOTEL</h2>
-			<!--<button onclick="window.location.href='https://forms.gle/NArPppwVi5Nd4LE79';">ORDER</button>-->
-			<button style="background-color: grey;">CLOSED</button>
+			<button onclick="order();window.location.href='https://forms.gle/NArPppwVi5Nd4LE79';">ORDER</button>
+			<!--<button style="background-color: grey;" >CLOSED</button>-->
 
 		</div>
 		    <div class = "description">
@@ -86,8 +95,8 @@
 		<div style="background-image: url('cardback2.jpeg');"class = "ihot">
 			<div class = "hotelname">
 			<h2>TAJ HOTEL</h2>
-			<!--<button onclick="window.location.href='https://forms.gle/CD92HPzZZU2MByfP6';">ORDER</button>-->
-			<button style="background-color: grey;">CLOSED</button>
+			<button onclick="order();window.location.href='https://forms.gle/CD92HPzZZU2MByfP6';">ORDER</button>
+			<!--<button style="background-color: grey;">CLOSED</button>-->
 		</div>
 		    <div class = "description">
 		    <p>Click 'Order' button<br>
@@ -102,8 +111,8 @@
 		<div style="background-image: url('cardback3.jpeg');" class = "ihot">
 			<div class = "hotelname">
 			<h2>POTS N WOKS</h2>
-			<!--<button onclick="window.location.href='https://forms.gle/vUN68v3vT1QxcVqXA';">ORDER</button>-->
-			<button style="background-color: grey;">CLOSED</button>
+			<button onclick=" order();window.location.href='https://forms.gle/vUN68v3vT1QxcVqXA';">ORDER</button>
+			<!--<button style="background-color: grey;">CLOSED</button>-->
 		</div>
 		    <div class = "description">
 		    <p>Click 'Order' button<br>
@@ -188,9 +197,10 @@
 	</main>
 	<footer>
 		<div class="copyright">
-		<p>| All Rights Reserved | 2023 Copyright&#169; |</p>
+		<p>| All Rights Reserved |</p>
 	</div>
 	</footer>
+
 
 </body>
 </html>
