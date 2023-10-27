@@ -19,7 +19,24 @@ Enjoy your convenient food ordering!<br><br>`;
         butg.innerHTML = "READMORE";
         count-=1;
     }}
-function order(){
-    alert("Please fill the form correctly!"+"\n"+"Conformation message will be sent to your email"+"\n"+"For any ordering issues only"+"\n"+"Contact: +91 6383577376 , +91 9095779297"+"\n"+"[Don't call for any other purpose]");
-   
-}
+
+function order(link){
+    const b= link;
+    swal({title:"Note!",
+          text:`Please fill the form correctly
+                Conformation message will be sent to your email
+                For any ordering issues only
+                Contact: +91 6383577376 , +91 9095779297
+                [Not for any other purpose]
+
+
+                Redirecting in 3 seconds...`,
+
+           showConfirmButton: false
+          });
+
+    setTimeout(redirect,3000);
+    function redirect(){
+        console.log("Redirecting");
+        window.location.href= b;
+}}
