@@ -31,8 +31,7 @@ function order(link){
 
 
                 Redirecting in 3 seconds...`,
-
-           showConfirmButton: false
+           
           });
 
     setTimeout(redirect,3000);
