@@ -1,5 +1,4 @@
 let count = 0;
-let ok = false;
 function guidelines(){
     let gui = document.getElementById('gui');
     let but = document.getElementById('butg');
@@ -32,7 +31,7 @@ function order(link){
 
 
                 Redirecting in 3 seconds...`,
-          showConfirmButton: ok
+        
            
           });
 
@@ -40,5 +39,4 @@ function order(link){
     function redirect(){
         console.log("Redirecting");
         window.location.href= b;
-        ok = true;
 }}
