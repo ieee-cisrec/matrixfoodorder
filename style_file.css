@@ -1,6 +1,9 @@
 body{
 	background-color:#262425 ;
 }
+html{
+ scroll-behavior:smooth;
+}
 .logo img{
 	float:left;
 	width:70px;
