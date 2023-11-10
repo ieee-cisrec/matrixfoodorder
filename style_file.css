@@ -131,6 +131,7 @@ margin-right: auto;
 	border-radius: 20px;
 	margin-left:10%;
 	margin-right: 10%;
+	scroll-snap-type: x mandatory;
 }
 .hotels_card nav{
 	display: inline-block;
@@ -192,6 +193,7 @@ margin-right: auto;
 	height: 320px;
 	width:250px;
 	margin-right: 25px;
+	scroll-snap-align:center;
 	border: 2px antiquewhite solid;
 }
 
