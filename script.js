@@ -22,7 +22,7 @@ Enjoy your convenient food ordering!<br><br>`;
 
 function order(link){
     const b= link;
-    swal({title:"Note!",
+   swal({title:"Note!",
           text:`Please fill the form correctly
                 Conformation message will be sent to your email
                 For any ordering issues only
@@ -34,7 +34,6 @@ function order(link){
         
            
           });
-
     setTimeout(redirect,3000);
     function redirect(){
         console.log("Redirecting");
