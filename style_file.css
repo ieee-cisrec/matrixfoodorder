@@ -1,5 +1,5 @@
 body{
-	background-color:#262425 ;
+	background-color:whitesmoke ;
 }
 html{
  scroll-behavior:smooth;
@@ -18,7 +18,7 @@ html{
 
 .banner h1{
 	margin-left: 7%;
-	color:#FFAE0B;
+	color:#262626;
 	display:inline-block;
 	font-family: monospace;
 	animation: color-change 1s Linear ;
@@ -29,23 +29,26 @@ html{
   animation: color-change 1s Linear ;
   animation-delay: 0s;
 }
+#gui{
+ border: solid grey 2px;
+ border-radius: 5px;
+
+}
 @keyframes color-change{
-	0%{color:white;
+	0%{
 		text-shadow: none;
 		filter: blur(8px);
   -webkit-filter: blur(8px);}
-	50%{color:white;
+	50%{
 		text-shadow: none;
 	filter: blur(8px);
   -webkit-filter: blur(8px);}
 	70%{
-		  color:white;
 		  text-shadow:white 2px 2px;
 	}
 	100%{
-		color:white;
 		text-shadow:white 2px 2px;
-			}
+	}
 	
 }
 .card{
@@ -57,7 +60,6 @@ html{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #262425;
 }
 
 .card li {
@@ -67,17 +69,12 @@ html{
 
 .card li:last-child {
   border-right: none;
-    font-family: fantasy;
-  background-color:#660000;
+  font-family: "Cambria";
   border-radius:10px;
-  border:outset black;
-
-
 }
-
-.card li a {
+.card li a{
   display: block;
-  color: white;
+  color:#262626;
   text-align: center;
   border-radius: 10px;
   padding: 11px 13px;
@@ -89,6 +86,7 @@ html{
 }
 .card li a:hover{
 	background-color: grey;
+	color: white;
 }
 
 
@@ -97,8 +95,8 @@ padding: 20px
 }
 .wel h1{
 	text-align: center;
-	font-family:Courier;
-	color:#FFAE0B;
+	font-family:Helvetica,serif;
+	color:#ff944d;
 
 }
 .orderonline img{
@@ -107,15 +105,15 @@ margin-left: auto;
 margin-right: auto;
 }
 .q1 marquee{
-	color: #bfbfbf;
+	color:#595959;
 	text-align: center;
 	font-size: 50px;
 	font-family: Comic Sans;
 }
 #hotels{
 	text-align: center;
-	font-family:Courier;
-	color:#FFAE0B;
+	font-family: Helvetica,serif;
+	color:#ff944d;
 	text-decoration: blink;
 	margin-top:5%;
 	
@@ -127,7 +125,6 @@ margin-right: auto;
 	white-space: nowrap;
 	font-family: arial;
 	text-align: center;
-	background-color:#262425 ;
 	border-radius: 20px;
 	margin-left:10%;
 	margin-right: 10%;
@@ -189,12 +186,12 @@ margin-right: auto;
 	height: 100%;
 	padding: 20px;
 	border-radius:20px;
-	box-shadow:black 4px 4px 4px 4px;
+	box-shadow:grey 4px 4px 4px 4px;
 	height: 320px;
 	width:250px;
 	margin-right: 25px;
-	scroll-snap-align:center;
 	border: 2px antiquewhite solid;
+	scroll-snap-align:center;
 }
 
 .hotels_card button a{
@@ -207,14 +204,14 @@ margin-right: auto;
 .symb h4{
 	
 	text-align: center;
-	color: lawngreen;
-	font-size: 20px;
-	font-family:monospace;
+	color:Black;
+	font-size: 25px;
+	font-family:arial;
 }
 
 .menulist h2{
 	text-align: center;
-	font-family:Courier;
+	font-family:Helvetica,serif;
 	color:#FFAE0B;
 	text-decoration: blink;
 	margin-top:5%;
@@ -233,11 +230,11 @@ margin-right: auto;
 .menulist a{
 	text-decoration: none;
 	background-color: skyblue;
-	color: white;
+	color: black;
 	padding: 10px;
 	border-radius: 10px;
 	border:inset 2px skyblue;
-	box-shadow: black 2px 2px 2px 2px;
+	box-shadow: grey 2px 2px 2px 2px;
 }
 .menulist p{
 	padding: 0px;
@@ -254,7 +251,7 @@ margin-right: auto;
 }
 .copyright p{
 	text-align: center;
-	color: white;
+	color: #595959;
 	font-family: arial;
 
 }
@@ -277,9 +274,9 @@ margin-right: auto;
 
 }
 .gu p{
-	text-align: center;
-	margin-left: 10%;
-	margin-right: 10%;
+	text-align:center;
+	margin-left: 5%;
+	margin-right: 5%;
 	font-family: arial;
 	color: #595959;
 	border-radius: 7px;
