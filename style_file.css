@@ -204,9 +204,9 @@ margin-right: auto;
 .symb h4{
 	
 	text-align: center;
-	color:Black;
-	font-size: 25px;
-	font-family:arial;
+	color:grey;
+	font-size: 20px;
+	font-family:monospace;
 }
 
 .menulist h2{
@@ -318,3 +318,43 @@ margin-right: auto;
 	border:solid 2px grey;
 
 }
+#pan_clo{
+	display:inline-block;
+}
+#pan_open{
+	display: none;
+}
+#taj_clo{
+	display: inline-block;
+}
+#taj_open{
+	display: none;
+}
+#pot_clo{
+	display: inline-block;
+}
+#pot_open{
+	display: none;
+}
+
+#rem_clo{
+	display: inline-block;
+}
+#rem_open{
+	display: none;
+}
+
+#rem1_clo{
+	display: inline-block;
+}
+#rem1_open{
+	display: none;
+}
+#rem2_clo{
+	display: inline-block;
+}
+#rem2_open{
+	display: none;
+}
+
+
