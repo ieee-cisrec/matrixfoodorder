@@ -42,6 +42,7 @@ function order(link){
 
 const a = [1,1,0,1];
 // 0 - #Hotel_1, 1 - #Hotel_2, 2 - #Hotel_3,3 - #Hotel_4
+console.log("Automation - ON");
 setInterval(automate,1000);
 function automate(){
     const d = new Date();
