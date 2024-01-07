@@ -7,7 +7,7 @@ function guidelines(){
     gui.innerHTML = `<br><div class = "head"><u>GUIDELINES</u></div><br>
 
 This service is exclusively available for hostel 
-residents every Sunday. To ensure a smooth experience, 
+residents every Saturday. To ensure a smooth experience, 
 please refrain from fake orders and respect the platform's purpose. 
 Your cooperation creates a positive environment for everyone. 
 Enjoy your convenient food ordering!<br><br>`;
