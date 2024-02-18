@@ -62,7 +62,7 @@ function automate(){
     let rem2_open = document.getElementById('rem2_open');
     let rem2_clo = document.getElementById('rem2_clo');
 
-    if(day == 6){
+    if(day == 7){
         if(Hours >= 15){
             if(a[0] == 1){
                 if((Hours >= 17)&&(min>=30)){
