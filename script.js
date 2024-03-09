@@ -1,3 +1,8 @@
+
+swal({title:"Maintenance",
+          text:`Due to scheduled maintenance, our website will be temporarily offline today. We apologize for any inconvenience this may cause. Normal service will resume next week. Thank you for your understanding and patience.`,       
+          });
+
 let count = 0;
 function guidelines(){
     let gui = document.getElementById('gui');
@@ -40,7 +45,7 @@ function order(link){
         window.location.href= b;
 }}
 
-const a = [1,1,0,1];
+const a = [0,0,0,0];
 // 0 - #Hotel_1, 1 - #Hotel_2, 2 - #Hotel_3,3 - #Hotel_4
 console.log("Automation - ON");
 setInterval(automate,1000);
