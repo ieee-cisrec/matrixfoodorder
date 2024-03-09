@@ -1,7 +1,4 @@
-
-swal({title:"Maintenance",
-          text:`Due to scheduled maintenance, our website will be temporarily offline today. We apologize for any inconvenience this may cause. Normal service will resume next week. Thank you for your understanding and patience.`,       
-          });
+alert(`Due to scheduled maintenance, our website will be temporarily offline today. We apologize for any inconvenience this may cause. Normal service will resume next week. Thank you for your understanding and patience.`);
 
 let count = 0;
 function guidelines(){
