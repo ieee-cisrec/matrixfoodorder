@@ -2,16 +2,21 @@
 <html>
 <head>
     <title>Food Order Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: "Nunito", sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: 95vh;
             flex-direction: column;
         }
         .container {
@@ -53,6 +58,7 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-family: "Nunito", sans-serif;
         }
         button:hover {
             background-color: #e68900;
@@ -64,13 +70,31 @@
             border-radius: 4px;
             background-color: #f9f9f9;
         }
+
         @media (max-width: 600px) {
             .container {
-                padding: 20px;
+                padding: 10px;
             }
-            button {
-                margin-top: 10px;
+            input, select, button {
+                padding: 12px;
+                margin: 8px 0 15px;
+                font-size: 14px;
             }
+        }
+        #loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            display: none;
+            position: absolute;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
     <script>
@@ -112,7 +136,7 @@
             let total_cost = 0;
             let name = document.getElementById("name").value;
             let phone = document.getElementById("phone").value;
-
+    
             console.log("Order Details:");
             console.log(`Name: ${name}`);
             console.log(`Phone Number: ${phone}`);
@@ -144,6 +168,10 @@
         }
 
         function sendToGoogleSheet(data) {
+            let part1 = document.getElementById('part-1');
+            let part2 = document.getElementById('part-2');
+            let loader = document.getElementById('loader');
+            loader.style.display = "flex";
             const sheetDBUrl = 'https://sheetdb.io/api/v1/0kyhzd3tbaueg'; // Replace with your SheetDB API URL
             fetch(sheetDBUrl, {
                 method: 'POST',
@@ -153,8 +181,27 @@
                 body: JSON.stringify(data)
             })
             .then(response => response.json())
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message));
+            .then(response =>
+             {
+                part1.style.display = "none";
+                part2.style.display = "block";
+                loader.style.display = "none";
+                console.log('Success!', response);
+                Swal.fire({
+                title: "Success!",
+                text: "Your order has been placed successfully.",
+                icon: "success",
+            });
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                loader.style.display = "none";
+                Swal.fire({
+                title: "Error!",
+                text: "Failed to place your order. Please try again later.",
+                icon: "error"
+            });
+            });
         }
 
         window.onload = () => {
@@ -167,8 +214,8 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <h2>Food Order Form</h2>
+    <div class="container" id = "part-1">
+        <h2>PANDIAN HOTEL</h2>
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -186,12 +233,19 @@
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" min="1" required>
             
-            <button type="button" id="addButton">Add to Order</button>
+            <button type="button" id="addButton">Add to Cart</button>
             
             <div id="orderList"></div>
 
             <button type="submit">Submit Order</button>
         </form>
     </div>
+    <div id = "part-2" style="display:none">
+        <br><br><br>
+        <h1 style="color: green;text-align: center;">Your Order placed Sucessfully!</h1>
+        <p style="color:grey;text-align: center;">You can see the order status by clicking below icon</p>
+        <button style="background: skyblue;">Order Status</button>
+    </div> 
+    <div id="loader"></div>
 </body>
 </html>
