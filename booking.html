@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+            box-sizing: border-box;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #4CAF50;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e68900;
+        }
+        #orderList {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            button {
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <script>
+        let menuItems = [
+            { name: "Pizza", cost: 10 },
+            { name: "Burger", cost: 5 },
+            { name: "Pasta", cost: 8 }
+        ];
+
+        let orderDetails = [];
+
+        function addMenuItem() {
+            let menuSelect = document.getElementById("menu");
+            let quantity = document.getElementById("quantity").value;
+            let selectedItem = menuItems[menuSelect.selectedIndex];
+
+            if (quantity > 0) {
+                let orderItem = {
+                    item: selectedItem.name,
+                    quantity: quantity,
+                    cost: selectedItem.cost * quantity
+                };
+
+                orderDetails.push(orderItem);
+
+                // Append order item to the UI
+                let orderList = document.getElementById("orderList");
+                let orderItemElement = document.createElement("p");
+                orderItemElement.textContent = `${orderItem.item} x${orderItem.quantity} - $${orderItem.cost}`;
+                orderList.appendChild(orderItemElement);
+
+                console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - $${orderItem.cost}`);
+            } else {
+                alert("Please enter a valid quantity.");
+            }
+        }
+
+        function submitOrder() {
+            let total_cost = 0;
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+
+            console.log("Order Details:");
+            console.log(`Name: ${name}`);
+            console.log(`Phone Number: ${phone}`);
+            console.log("Order Items:");
+            let menu_list = "";
+            let count = 0;
+            orderDetails.forEach(orderItem => {
+                let itemString = `${orderItem.item} - ${orderItem.quantity}`;
+                total_cost += orderItem.cost;
+                if (count != 0) {
+                    menu_list = menu_list + "\n" + itemString;
+                } else {
+                    menu_list = itemString;
+                    count = 1;
+                }
+            });
+            console.log(menu_list);
+            console.log(`Total Cost: $${total_cost}`);
+
+            // Fetch data to spreadsheet
+            let data = {
+                name: name,
+                phone: phone,
+                menulist: menu_list,
+                totalcost: total_cost
+            };
+
+            sendToGoogleSheet(data);
+        }
+
+        function sendToGoogleSheet(data) {
+            const sheetDBUrl = 'https://sheetdb.io/api/v1/0kyhzd3tbaueg'; // Replace with your SheetDB API URL
+            fetch(sheetDBUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message));
+        }
+
+        window.onload = () => {
+            document.getElementById('addButton').onclick = addMenuItem;
+            document.querySelector('form').onsubmit = (event) => {
+                event.preventDefault();
+                submitOrder();
+            };
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Food Order Form</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="menu">Choose Menu:</label>
+            <select id="menu" name="menu">
+                <option value="0">Pizza - $10</option>
+                <option value="1">Burger - $5</option>
+                <option value="2">Pasta - $8</option>
+            </select>
+            
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+            
+            <button type="button" id="addButton">Add to Order</button>
+            
+            <div id="orderList"></div>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+</body>
+</html>
