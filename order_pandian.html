@@ -109,7 +109,8 @@
         let orderDetails = [];
 
         let totalCost = 0;
-
+        function live(){
+        window.href = "live_tracking.html";}
         function addMenuItem() {
             let menuSelect = document.getElementById("menu");
             let quantity = document.getElementById("quantity").value;
@@ -252,7 +253,7 @@
     <div id = "part-2" style="display:none">
         <h1 style="color: green;text-align: center;">Your Order placed Sucessfully!</h1>
         <p style="color:grey;text-align: center;">You can see the order status by clicking below icon</p>
-        <a style="background: skyblue;" href="https://matrixfoodorder2.vercel.app/live_tracking.html">View Order Status</a>
+        <button style="background: skyblue;" onclick="live()">View Order Status</button>
     </div> 
     <div id="loader"></div>
     <p style="color:grey;text-align:center">Powered by matrixfoodorder</p>
