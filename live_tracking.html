@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  href="matrix_icon.png">
+    <title>Hotel Tracking App</title>
+    <
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('track_back.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+        .hotel {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            margin: 10px 0;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .hotel:hover {
+            transform: scale(1.05);
+            background-color: #f0f0f0;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .status-not-arrived {
+            color: red;
+        }
+        .status-arrived {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hotel Tracking</h1>
+    <p style="color: orange;margin-left: 5%;margin-right:5% ;">[<b>Note: </b>This feature only show the information about the hotel is arrived or not inside our college campus.It will not show the exact location.]</p>
+    <div class="hotel" id="hotel1">
+        <h3>Pandian Hotel</h3>
+        <p class="status" id="status1">Checking status...</p>
+    </div>
+    <div class="hotel" id="hotel2">
+        <h3>Taj Hotel</h3>
+        <p class="status" id="status2">Checking status...</p>
+    </div>
+    <div class="hotel" id="hotel3">
+        <h3>SS HOTEL</h3>
+        <p class="status" id="status3">Checking status...</p>
+    </div>
+    <p style="text-align: center;color: grey;">Powered by matrixfoodorder</p>
+    <script>
+        const hotelStatuses = [0, 0, 0]; // Array to hold the status of each hotel
+
+        function updateHotelStatus() {
+            for (let i = 0; i < hotelStatuses.length; i++) {
+                let statusElement = document.getElementById(`status${i + 1}`);
+                if (hotelStatuses[i] === 0) {
+                    statusElement.textContent = '( Not Arrived Yet )';
+                    statusElement.classList.add('status-not-arrived');
+                    statusElement.classList.remove('status-arrived');
+                } else {
+                    statusElement.textContent = '( Arrived )';
+                    statusElement.classList.add('status-arrived');
+                    statusElement.classList.remove('status-not-arrived');
+                }
+            }
+        }
+
+        updateHotelStatus();
+    </script>
+</body>
+</html>
