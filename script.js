@@ -1,4 +1,4 @@
-alert("New Version! \n Try out our new Forms, Order details and Tracking hotels seamlessly!");
+alert("New Version! \n Try out our new Forms, Order details and Tracking hotels seamlessly! Press ok to Order");
 
 let count = 0;
 function guidelines(){
