@@ -64,10 +64,10 @@ function automate(){
     let rem2_open = document.getElementById('rem2_open');
     let rem2_clo = document.getElementById('rem2_clo');
 
-    if(day == 4){
+    if(day == 6){
         if(Hours >= 15){
             if(a[0] == 1){
-                if((Hours >= 19)&&(min>=30)){
+                if((Hours >= 17)&&(min>=30)){
                     pand_clo.style.display = "inline-block";
                     pand_open.style.display = "none";
                 }
@@ -81,7 +81,7 @@ function automate(){
                 }
             }
             if(a[1] == 1){
-                if((Hours >= 19)&&(min>=30)){
+                if((Hours >= 18)&&(min>=30)){
                     taj_clo.style.display = "inline-block";
                     taj_open.style.display = "none";
                 }
