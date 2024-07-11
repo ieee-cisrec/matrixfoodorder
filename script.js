@@ -1,4 +1,8 @@
-
+Swal.fire({
+                title: "New Version!",
+                text: "Try out our new Forms, Order details and Tracking hotels seamlessly!",
+                icon: "info"
+            });
 
 let count = 0;
 function guidelines(){
