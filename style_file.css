@@ -23,6 +23,7 @@ html{
 	display:inline-block;
 	animation: color-change 1s Linear ;
 	animation-delay: 0s;
+	font-family:monospace;
 	float:right;
 }
 .tot{
