@@ -189,7 +189,10 @@
             let total_cost = 0;
             let name = document.getElementById("name").value;
             let phone = document.getElementById("phone").value;
-    
+    	    if (!/^\d{10}$/.test(phone)) {
+		        alert("Please enter a valid 10-digit phone number.");
+		        return; 
+	    }
             console.log("Order Details:");
             console.log(`Name: ${name}`);
             console.log(`Phone Number: ${phone}`);
