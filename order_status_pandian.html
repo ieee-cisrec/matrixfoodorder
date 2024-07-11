@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  href="matrix_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Pandian_Details</title>
+    <style>
+        body {
+            font-family: "Nunito", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: "Nunito", sans-serif;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: "Nunito", sans-serif;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #output {
+            background: #fff;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        #loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            display: none;
+            position: absolute;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        async function fetchData() {
+            loader.style.display = "flex";
+            const mobileNumber = document.getElementById("mobileNumber").value;
+            const url = `https://sheetdb.io/api/v1/0kyhzd3tbaueg/search?phone=${mobileNumber}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.length > 0) {
+                    const userData = data[0];
+                    loader.style.display = "none";
+                    document.getElementById("name").textContent = `Name: ${userData.name}`;
+                    document.getElementById("phone").textContent = `Phone: ${userData.phone}`;
+                    document.getElementById("menulist").textContent = `Menu List: ${userData.menulist}`;
+                    document.getElementById("totalcost").textContent = `Total Cost: ₹${userData.totalcost}/-`;
+                    
+
+                    if(userData.status == 1){
+                        document.getElementById("status").style.color = "green";
+                        document.getElementById("status").textContent = `Order Status: Confirmed`;
+                    }
+                    else if(userData.status == ""){
+                        document.getElementById("status").textContent = "Order Status: Will be updated soon...";
+                        document.getElementById("status").style.color = "black";
+                    }
+                    else{
+                        document.getElementById("status").style.color = "red";
+                        document.getElementById("status").textContent = `Order Status: Not Confirmed`;
+                    }
+                } else {
+                    document.getElementById("output").textContent = "No data found for the given mobile number.";
+                    loader.style.display = "none";
+                }
+            } catch (error) {
+                document.getElementById("output").textContent = "Error fetching data.Please refresh the page and try again or contact: 6383577376 / 9095779297";
+                console.error("Error fetching data:", error);
+                loader.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">ORDER DETAILS</h1>
+    <form onsubmit="event.preventDefault(); fetchData();">
+        <label for="mobileNumber">Enter Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber" placeholder="enter ordered mobile number" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="output">
+        <p id="name">---</p>
+        <p id="phone"></p>
+        <p id="menulist"></p>
+        <p id="totalcost"></p>
+        <h3 id="status"></h3>
+    </div>
+    <p style="text-align:center;"><b>Pandian Hotel</b> <br>Powered by matrixfoodorder</p>
+    <div id="loader"></div>
+</body>
+</html>
