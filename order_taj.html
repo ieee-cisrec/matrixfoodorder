@@ -97,51 +97,93 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .order-item {
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    margin-bottom: 10px;
+		}
+
+		#removeButton {
+		    padding: 4px 8px;
+		    background-color:grey;
+		    color: white;
+		    border: none;
+		    cursor: pointer;
+		    font-size: 16px;
+		    width: 80px;
+		}
     </style>
     <script>
 
         let menuItems = [
-            { name: "Pizza", cost: 10 },
-            { name: "Burger", cost: 5 },
-            { name: "Pasta", cost: 8 },
-        ];
+		    { name: "Pizza", cost: 10 },
+		    { name: "Burger", cost: 5 },
+		    { name: "Pasta", cost: 8 },
+		];
 
-        let orderDetails = [];
+		let orderDetails = [];
+		let totalCost = 0;
 
-        let totalCost = 0;
-        
-        function live(){
-        window.location.href = "order_status_taj.html";}
-        
-        function addMenuItem() {
-            let menuSelect = document.getElementById("menu");
-            let quantity = document.getElementById("quantity").value;
-            let selectedItem = menuItems[menuSelect.selectedIndex];
+		function live() {
+		    window.location.href = "order_status_taj.html";
+		}
 
-            if (quantity > 0) {
-                let orderItem = {
-                    item: selectedItem.name,
-                    quantity: quantity,
-                    cost: selectedItem.cost * quantity
-                };
+		function addMenuItem() {
+		    let menuSelect = document.getElementById("menu");
+		    let quantity = document.getElementById("quantity").value;
+		    let selectedItem = menuItems[menuSelect.selectedIndex];
 
-                orderDetails.push(orderItem);
+		    if (quantity > 0) {
+		        let orderItem = {
+		            item: selectedItem.name,
+		            quantity: quantity,
+		            cost: selectedItem.cost * quantity
+		        };
 
-                let orderList = document.getElementById("orderList");
-                let orderItemElement = document.createElement("p");
-                orderItemElement.textContent = `${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`;
-                orderList.appendChild(orderItemElement);
+		        orderDetails.push(orderItem);
 
-                totalCost += orderItem.cost;
-                document.getElementById("totalCost").textContent = `Total Cost: ₹${totalCost}`;
-                
+		        let orderList = document.getElementById("orderList");
+		        let orderItemElement = document.createElement("div");
+		        orderItemElement.classList.add("order-item");
+
+		        let itemText = document.createElement("p");
+		        itemText.textContent = `${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`;
+		        orderItemElement.appendChild(itemText);
+
+		        let removeButton = document.createElement("button");
+		        removeButton.setAttribute("id", "removeButton");
+		        removeButton.textContent = "Remove";
+		        
+		        removeButton.onclick = function() {
+		            removeMenuItem(orderItem, orderItemElement);
+		        };
+		        orderItemElement.appendChild(removeButton);
+
+		        orderList.appendChild(orderItemElement);
+
+		        totalCost += orderItem.cost;
+		        document.getElementById("totalCost").textContent = `Total Cost: ₹${totalCost}`;
+
+		        console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
+		    } else {
+		        alert("Please enter a valid quantity.");
+		    }
+		}
+
+		function removeMenuItem(orderItem, orderItemElement) {
+		    let index = orderDetails.findIndex(item => item.item === orderItem.item && item.quantity === orderItem.quantity);
+		    if (index !== -1) {
+		        orderDetails.splice(index, 1);
+		        totalCost -= orderItem.cost;
+		        document.getElementById("totalCost").textContent = `Total Cost: ₹${totalCost}`;
+		        orderItemElement.remove();
+		        console.log(`Item removed: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
+		    }
+		}
 
 
-                console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
-            } else {
-                alert("Please enter a valid quantity.");
-            }
-        }
+
 
         function submitOrder() {
             let total_cost = 0;
@@ -236,10 +278,11 @@
             
             <label for="menu">Choose Menu:</label>
             <select id="menu" name="menu">
-                <option value="0">Pizza - ₹10</option>
-                <option value="1">Burger - ₹5</option>
-                <option value="2">Pasta - ₹8</option>
-            </select>
+		            <option value="0">Pizza - ₹10</option>
+		            <option value="1">Burger - ₹5</option>
+		            <option value="2">Pasta - ₹8</option>
+		    </select>
+		    
             
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" min="1" required>
