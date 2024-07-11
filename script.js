@@ -1,8 +1,4 @@
-swal({
-                title: "New Version!",
-                text: "Try out our new Forms, Order details and Tracking hotels seamlessly!",
-                
-            });
+alert("New Version! \n Try out our new Forms, Order details and Tracking hotels seamlessly!");
 
 let count = 0;
 function guidelines(){
