@@ -120,6 +120,7 @@
     	// Not available foods
 
         let menuItems = [
+        	{name: "none", cost: 0},
 		    {name: "Chicken Biriyani", cost: 170},
 			{name: "Chicken Biriyani Spl.", cost: 210},
 			{name: "Chicken Mughal Biriyani", cost: 210},
@@ -383,8 +384,13 @@
 
 		        let selectOption = document.createElement("option");
 		        selectOption.value = item.name;
+		        if(item.name == "none"){
+		        	selectOption.textContent = `${item.name}`;
+		        	menuSelect.appendChild(selectOption);
+		        }
+		        else{
 		        selectOption.textContent = `${item.name} - ₹${item.cost}`;
-		        menuSelect.appendChild(selectOption);
+		        menuSelect.appendChild(selectOption);}
 		    });
 		});
 
@@ -392,7 +398,7 @@
 			document.getElementById('quantity').style.borderColor = "#ccc";
 		    let menuSearch = document.getElementById("menuSearch").value;
 		    let selectedItem = menuItems.find(item => `${item.name} - ₹${item.cost}` === menuSearch);
-
+		    document.getElementById('menuSearch').value = "";
 		    if (!selectedItem) {
 		        let menuSelect = document.getElementById("menuSelect");
 		        selectedItem = menuItems[menuSelect.selectedIndex];
@@ -406,7 +412,10 @@
 		            quantity: quantity,
 		            cost: selectedItem.cost * quantity
 		        };
-
+		        if(orderItem.item == "none"){
+		        	alert("Please choose some food (or) add using search");
+		        	return;
+		        }
 		        orderDetails.push(orderItem);
 
 		        let orderList = document.getElementById("orderList");
@@ -432,6 +441,7 @@
 		        document.getElementById("totalCost").textContent = `Total Cost: ₹${totalCost}`;
 		        document.getElementById("policy").style.display="block";
 		        console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
+		        document.getElementById("menuSelect").selectedIndex = 0;
 		    } else {
 		        alert("Please enter a valid menu item and quantity.");
 		        document.getElementById('quantity').style.borderColor = "red";
