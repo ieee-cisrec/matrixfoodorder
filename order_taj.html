@@ -113,6 +113,7 @@
 		    font-size: 16px;
 		    width: 80px;
 		}
+
     </style>
     <script>
 
@@ -129,12 +130,35 @@
 		    window.location.href = "order_status_taj.html";
 		}
 
-		function addMenuItem() {
-		    let menuSelect = document.getElementById("menu");
-		    let quantity = document.getElementById("quantity").value;
-		    let selectedItem = menuItems[menuSelect.selectedIndex];
+		document.addEventListener("DOMContentLoaded", function() {
+		    let menuList = document.getElementById("menuList");
+		    let menuSelect = document.getElementById("menuSelect");
 
-		    if (quantity > 0) {
+		    menuItems.forEach(item => {
+		        let option = document.createElement("option");
+		        option.value = `${item.name} - ₹${item.cost}`;
+		        menuList.appendChild(option);
+
+		        let selectOption = document.createElement("option");
+		        selectOption.value = item.name;
+		        selectOption.textContent = `${item.name} - ₹${item.cost}`;
+		        menuSelect.appendChild(selectOption);
+		    });
+		});
+
+		function addMenuItem() {
+			document.getElementById('quantity').style.borderColor = "#ccc";
+		    let menuSearch = document.getElementById("menuSearch").value;
+		    let selectedItem = menuItems.find(item => `${item.name} - ₹${item.cost}` === menuSearch);
+
+		    if (!selectedItem) {
+		        let menuSelect = document.getElementById("menuSelect");
+		        selectedItem = menuItems[menuSelect.selectedIndex];
+		    }
+
+		    let quantity = document.getElementById("quantity").value;
+
+		    if (selectedItem && quantity > 0) {
 		        let orderItem = {
 		            item: selectedItem.name,
 		            quantity: quantity,
@@ -154,7 +178,7 @@
 		        let removeButton = document.createElement("button");
 		        removeButton.setAttribute("id", "removeButton");
 		        removeButton.textContent = "Remove";
-		        
+
 		        removeButton.onclick = function() {
 		            removeMenuItem(orderItem, orderItemElement);
 		        };
@@ -167,9 +191,13 @@
 
 		        console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
 		    } else {
-		        alert("Please enter a valid quantity.");
+		        alert("Please enter a valid menu item and quantity.");
+		        document.getElementById('quantity').style.borderColor = "red";
 		    }
 		}
+
+
+
 
 		function removeMenuItem(orderItem, orderItemElement) {
 		    let index = orderDetails.findIndex(item => item.item === orderItem.item && item.quantity === orderItem.quantity);
@@ -191,6 +219,7 @@
             let phone = document.getElementById("phone").value;
     	    if (!/^\d{10}$/.test(phone)) {
 		        alert("Please enter a valid 10-digit phone number.");
+		        document.getElementById('phone').style.borderColor = "red";
 		        return; 
 	    }
             console.log("Order Details:");
@@ -279,12 +308,14 @@
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
             
-            <label for="menu">Choose Menu:</label>
-            <select id="menu" name="menu">
-		            <option value="0">Pizza - ₹10</option>
-		            <option value="1">Burger - ₹5</option>
-		            <option value="2">Pasta - ₹8</option>
-		    </select>
+            <label for="menuSearch">Search Menu:</label>
+			<input type="text" id="menuSearch" name="menuSearch" list="menuList" placeholder="Start typing to search...">
+			<datalist id="menuList"></datalist>
+			<h3 style="text-align: center;color: grey;">(OR)</h3>
+			<label for="menuSelect">Choose Menu:</label>
+			<select id="menuSelect" name="menuSelect">
+			    <!-- Options will be dynamically populated -->
+			</select>
 		    
             
             <label for="quantity">Quantity:</label>
