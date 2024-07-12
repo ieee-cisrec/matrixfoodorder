@@ -133,11 +133,132 @@
     </style>
     <script>
 
-
        let menuItems = [
-            { name: "Pizza", cost: 10 },
-            { name: "Burger", cost: 5 },
-            { name: "Pasta", cost: 8 },
+            {name: "none", cost: 0},
+            { name: "Shawarma roll", cost: 100 },
+            { name: "Shawarma plate", cost: 140 },
+            { name: "Special shawarma roll", cost: 120 },
+            { name: "Special shawarma plate", cost: 160 },
+            { name: "Grill half", cost: 200 },
+            { name: "Grill full", cost: 390 },
+            { name: "Gobi65/Manchurian/Chilli", cost: 130 },
+            { name: "Mushroom65/Manchurian/Gravy", cost: 150 },
+            { name: "Paneer65/Manchurian/Chilli", cost: 150},
+            { name: "Chicken65", cost: 170 },
+            { name: "Chicken65 B/L", cost: 180 },
+            { name: "Pepper Chicken", cost: 170 },
+            { name: "Garlic Chicken", cost: 180 },
+            { name: "Chilli Chicken", cost: 180 },
+            { name: "Chettinadu Chicken", cost: 175 },
+            { name: "Chicken Masala", cost: 175 },
+            { name: "Chicken Fry", cost: 170 },
+            { name: "veg fried rice", cost: 120 },
+            { name: "schezwan veg fried rice", cost: 130 },
+            { name: "gobi fried rice", cost: 130 },
+            { name: "schezwan gobi fried rice", cost: 140 },
+            { name: "paneer fried rice", cost: 140 },
+            { name: "schezwan paneer fried rice", cost: 150 },
+            { name: "mushroom fried rice", cost: 140 },
+            { name: "schezwan mushroom fried rice", cost: 150 },
+            { name: "chicken fried rice", cost: 145 },
+            { name: "schezwan chicken fried rice", cost: 155 },
+            { name: "egg fried rice", cost: 120 },
+            { name: "schezwan egg fried rice", cost: 130 },
+            { name: "veg noodles", cost: 120 },
+            { name: "schezwan veg noodles", cost: 130 },
+            { name: "chicken noodles", cost: 145 },
+            { name: "schezwan chicken noodles", cost: 155 },
+            { name: "Veg. Meals", cost: 90 },
+            { name: "Non Veg. Meals", cost: 90 },
+            { name: "Half Meals", cost: 45 },
+            { name: "Extra Meals", cost: 20 },
+            { name: "Boiled Egg", cost: 15 },
+            { name: "Omlet / One Side Omlet", cost: 20 },
+            { name: "Half Boil / Full Boil", cost: 20 },
+            { name: "Double Omlet", cost: 40 },
+            { name: "Kalaki", cost: 25 },
+            { name: "Egg Podimas", cost: 25 },
+            { name: "Egg Masala", cost: 80 },
+            { name: "Chilli Egg", cost: 70 },
+            { name: "Chicken Egg Laba", cost: 140 },
+            { name: "Mutton Egg Laba", cost: 160 },
+            { name: "Prawn Egg Laba", cost: 180 },
+            { name: "Chicken Kari Dosai", cost: 160 },
+            { name: "Mutton Kari Dosai", cost: 180 },
+            { name: "Prawn Kari Dosai", cost: 190 },
+            {name: "Hot Sour Veg Soups", cost: 60},
+            {name: "Mush Room Soup", cost: 65},
+            {name: "Tomato Soup", cost: 90},
+            {name: "Hot & Sour Chicken Soup", cost: 70},
+            {name: "Mutton Soups", cost: 90},
+            {name: "Mutton Fry", cost: 230},
+            {name: "Mutton Chops", cost: 185},
+            {name: "Mutton Paya", cost: 170},
+            {name: "Mutton Kuruma", cost: 220},
+            {name: "Mutton Brain", cost: 180},
+            {name: "Mutton Masala", cost: 220},
+            {name: "Mutton Thalacurry", cost: 190},
+            {name: "Mutton Liver", cost: 180},
+            {name: "Mutton Botty", cost: 130},
+            {name: "Mutton Egg Botty", cost: 150},
+            {name: "Chicken Lolly Pop", cost: 190},
+            {name: "Nattukozhi Masala", cost: 190},
+            {name: "Nattukozhi Fry", cost: 185},
+            {name: "Kadai Fry", cost: 155},
+            {name: "Kadai Masala", cost: 165},
+            {name: "Fish Fry (Vanjaram)", cost: 200},
+            {name: "Fish Curry", cost: 210},
+            {name: "Fish Podimas", cost: 230},
+            {name: "Nethily Fry", cost: 160},
+            {name: "Finger Fish", cost: 190},
+            {name: "Chilly Fish", cost: 220},
+            {name: "Crab Masala", cost: 170},
+            {name: "Sura Puttu", cost: 160},
+            {name: "Prawn Fry", cost: 185},
+            {name: "Prawn Masala", cost: 185},
+            {name: "Prawn Manchurian", cost: 180},
+            {name: "Prawn 65", cost: 180},
+            {name: "Mutton Biryani", cost: 250},
+            {name: "Chicken Biryani", cost: 170},
+            {name: "Nattukozhi Biryani", cost: 180},
+            {name: "Prawn Biryani", cost: 220},
+            {name: "Kadai Biryani", cost: 180},
+            {name: "Egg Biryani", cost: 120},
+            {name: "65 Biryani", cost: 200},
+            {name: "Mutton Rice/Noodles", cost: 210},
+            {name: "Egg Noodles", cost: 115},
+            {name: "Mixed Rice/Noodles", cost: 230},
+            {name: "Prawn Rice/Noodles", cost: 210},
+            {name: "Schezwan Mutton Rice", cost: 230},
+            {name: "Schezwan Mixed Rice", cost: 250},
+            {name: "Schezwan Prawn Rice", cost: 230},
+            {name: "Paneer Noodles", cost: 170},
+            {name: "Veg Mixed Fried Rice/Noodles", cost: 160},
+            {name: "Chicken Manchurian", cost: 185},
+            {name: "Ginger Chicken", cost: 160},
+            {name: "Butter Chicken", cost: 185},
+            {name: "Parotta 1", cost: 25},
+            {name: "Chappathi 1", cost: 25},
+            {name: "Dosai", cost: 50},
+            {name: "Kari Dosai", cost: 180},
+            {name: "Special Dosai", cost: 60},
+            {name: "Onion Dosai", cost: 70},
+            {name: "Egg Dosai", cost: 70},
+            {name: "Podi Dosai", cost: 70},
+            {name: "Kal Dosai", cost: 40},
+            {name: "Onion Uthappam", cost: 75},
+            {name: "Idyappam (3)", cost: 50},
+            {name: "Idly (1)", cost: 15},
+            {name: "Egg Kal Dosai", cost: 60},
+            {name: "Ghee Dosai", cost: 130},
+            {name: "Paper Roast Dosai", cost: 140},
+            {name: "Egg Parotta", cost: 100},
+            {name: "Chicken Egg Parotta", cost: 160},
+            {name: "Mutton Egg Parotta", cost: 200},
+            {name: "Mixed Egg Parotta", cost: 220},
+            {name: "Veechu Parotta", cost: 25},
+            {name: "Egg Veechu Parotta", cost: 55},
+            {name: "Chilli Parotta", cost: 100}
         ];
 
         let orderDetails = [];
@@ -159,8 +280,13 @@
 
                 let selectOption = document.createElement("option");
                 selectOption.value = item.name;
+                if(item.name == "none"){
+                    selectOption.textContent = `${item.name}`;
+                    menuSelect.appendChild(selectOption);
+                }
+                else{
                 selectOption.textContent = `${item.name} - ₹${item.cost}`;
-                menuSelect.appendChild(selectOption);
+                menuSelect.appendChild(selectOption);}
             });
         });
 
@@ -168,6 +294,7 @@
             document.getElementById('quantity').style.borderColor = "#ccc";
             let menuSearch = document.getElementById("menuSearch").value;
             let selectedItem = menuItems.find(item => `${item.name} - ₹${item.cost}` === menuSearch);
+            document.getElementById('menuSearch').value = "";
 
             if (!selectedItem) {
                 let menuSelect = document.getElementById("menuSelect");
@@ -182,7 +309,10 @@
                     quantity: quantity,
                     cost: selectedItem.cost * quantity
                 };
-
+                if(orderItem.item == "none"){
+                    alert("Please choose some food (or) add using search");
+                    return;
+                }
                 orderDetails.push(orderItem);
 
                 let orderList = document.getElementById("orderList");
@@ -208,6 +338,7 @@
                 document.getElementById("totalCost").textContent = `Total Cost: ₹${totalCost}`;
                 document.getElementById("policy").style.display="block";
                 console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
+                document.getElementById("menuSelect").selectedIndex = 0;
             } else {
                 alert("Please enter a valid menu item and quantity.");
                 document.getElementById('quantity').style.borderColor = "red";
@@ -320,7 +451,7 @@
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
             
-            <label for="menuSearch">Search Menu: (Check your clipboard)</label>
+            <label for="menuSearch">Search Menu:</label>
             <input type="text" id="menuSearch" name="menuSearch" list="menuList" placeholder="Start typing to search...">
             <datalist id="menuList"></datalist>
             <h3 style="text-align: center;color: grey;">(OR)</h3>
@@ -330,7 +461,7 @@
             </select>
             
             <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" required>
+            <input type="number" id="quantity" name="quantity" min="1" value = 1 required>
             
             <button type="button" id="addButton">Add to Cart</button>
             
