@@ -105,7 +105,12 @@
                     document.getElementById("menulist").textContent = `Menu List: ${userData.menulist}`;
                     document.getElementById("totalcost").textContent = `Total Cost: ₹${userData.totalcost}/-`;
                     
-
+                    if(userData.bill == ""){
+                        document.getElementById("bill").textContent = `Bill No: --`;
+                    }
+                    else{
+                        document.getElementById("bill").textContent = `Bill No: ${userData.bill}`;
+                    }
                     if(userData.status == 1){
                         document.getElementById("status").style.color = "green";
                         document.getElementById("status").textContent = `Order Status: Confirmed`;
@@ -138,6 +143,7 @@
         <button type="submit">Search</button>
     </form>
     <div id="output">
+        <h3 id="bill"></h3>
         <p id="name">---</p>
         <p id="phone"></p>
         <p id="menulist"></p>
