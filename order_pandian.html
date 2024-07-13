@@ -291,6 +291,7 @@
         });
 
         function addMenuItem() {
+            document.getElementById('quantity').value = 1;
             document.getElementById('quantity').style.borderColor = "#ccc";
             let menuSearch = document.getElementById("menuSearch").value;
             let selectedItem = menuItems.find(item => `${item.name} - ₹${item.cost}` === menuSearch);
