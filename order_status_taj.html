@@ -107,6 +107,10 @@
                     document.getElementById("status").textContent = `Order Status: Confirmed`;
                     document.getElementById("status").style.color = "green";
                 }
+                else{
+                    loader.style.display = "none";
+                    document.getElementById("output").textContent = "No data Found!";
+                } 
             } catch (error) {
                 document.getElementById("output").textContent = "Error fetching data.Please refresh the page and try again or contact: 6383577376 / 9095779297";
                 console.error("Error fetching data:", error);
