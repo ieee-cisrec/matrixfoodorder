@@ -291,7 +291,6 @@
         });
 
         function addMenuItem() {
-            document.getElementById('quantity').value = 1;
             document.getElementById('quantity').style.borderColor = "#ccc";
             let menuSearch = document.getElementById("menuSearch").value;
             let selectedItem = menuItems.find(item => `${item.name} - ₹${item.cost}` === menuSearch);
@@ -340,6 +339,7 @@
                 document.getElementById("policy").style.display="block";
                 console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
                 document.getElementById("menuSelect").selectedIndex = 0;
+                document.getElementById('quantity').value = 1;
             } else {
                 alert("Please enter a valid menu item and quantity.");
                 document.getElementById('quantity').style.borderColor = "red";
