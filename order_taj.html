@@ -509,8 +509,8 @@
 		    let min = d.getMinutes();
 		    if(day == 6){
         		if(Hours >= 15){
-        			if((Hours >= 18)&&(min>=30)){
-                    	alert("Form Closed");
+        		if((Hours >= 18)&&(min>=30)){
+                    	    alert("Form Closed");
 	                }
 	                else if(Hours > 18){
 	                    alert("Form Closed");
@@ -519,9 +519,15 @@
 	                    sendToGoogleSheet(data);
 	                }
             }
+	     else{
+		alert("Form Closed");
         }
             
         }
+	else{
+	    alert("Form Closed");
+	}
+	}
 
         function sendToGoogleSheet(data) {
             let part1 = document.getElementById('part-1');
