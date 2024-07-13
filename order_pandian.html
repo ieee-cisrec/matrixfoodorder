@@ -380,7 +380,11 @@
                 total_cost += orderItem.cost;
                 if (count != 0) {
                     menu_list = menu_list + "\n" + itemString;
-                } else {
+                } 
+                else if(Hours > 17){
+                        alert("Form Closed");
+                    }
+                else {
                     menu_list = itemString;
                     count = 1;
                 }
