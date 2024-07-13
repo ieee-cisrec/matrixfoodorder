@@ -396,7 +396,27 @@
                 totalcost: total_cost
             };
 
-            sendToGoogleSheet(data);
+            const d = new Date();
+            let day = d.getDay();
+            let Hours = d.getHours();
+            let min = d.getMinutes();
+            if(day == 6){
+            if(Hours >= 15){
+                    if((Hours >= 17)&&(min>=30)){
+                        alert("Form Closed");
+                    }
+                    else{
+                        sendToGoogleSheet(data);
+                    }
+                }
+            else{
+                alert("Form Closed");
+            }
+            }
+            else{
+                alert("Form Closed");
+            }
+            
         }
 
         function sendToGoogleSheet(data) {
