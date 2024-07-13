@@ -341,8 +341,8 @@
                 console.log(`Item added: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
                 document.getElementById("menuSelect").selectedIndex = 0;
                 document.getElementById('quantity').value = 1;
-                let upiLink = `upi://pay?pa=hotelpandian.thandalam@okhdfcbank`;
-                document.getElementById("upiLink").href = upiLink;
+                // let upiLink = `upi://pay?pa=hotelpandian.thandalam@okhdfcbank`;
+                // document.getElementById("upiLink").href = upiLink;
             } else {
                 alert("Please enter a valid menu item and quantity.");
                 document.getElementById('quantity').style.borderColor = "red";
@@ -357,8 +357,8 @@
                 document.getElementById("totalCost").textContent = `Total Cost: ₹${totalCost}`;
                 orderItemElement.remove();
                 console.log(`Item removed: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
-                let upiLink = `upi://pay?pa=hotelpandian.thandalam@okhdfcbank`;
-                document.getElementById("upiLink").href = upiLink;
+                // let upiLink = `upi://pay?pa=hotelpandian.thandalam@okhdfcbank`;
+                // document.getElementById("upiLink").href = upiLink;
             }
         }
 
@@ -499,8 +499,9 @@
             
             <div id="orderList"></div>
             <h3 id="totalCost"></h3>
+<!--             <a id="upiLink" href="#" style="text-align:center;display:block;color:white;width:30%;background: #004d99;text-decoration: none;padding: 13px;border-radius: 7px;">Pay Amount</a> -->
             <h4 id="policy" style="display:none;"><hr>
-                <a id="upiLink" href="#" style="text-align:center;display:block;color:white;width:30%;background: #004d99;text-decoration: none;padding: 13px;border-radius: 7px;">Pay Amount</a><br>
+                
                 <u>Payment - Online  Transaction only</u><br>1) Pay the amount via Gpay/Other online transaction to (Gowri jagadeesh - 9600972314 or Bhuvana - 9790115637) <br>2) Once the transaction done, Send the payment Screenshot to this number via Whatsapp - 6383577376<hr></h4>
             <button type="submit" style="background:green;" >Submit Order</button>
         </form>
