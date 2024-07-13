@@ -357,6 +357,8 @@
                 document.getElementById("totalCost").textContent = `Total Cost: ₹${totalCost}`;
                 orderItemElement.remove();
                 console.log(`Item removed: ${orderItem.item} x${orderItem.quantity} - ₹${orderItem.cost}`);
+                let upiLink = `upi://pay?pa=hotelpandian.thandalam@okhdfcbank&pn=RecipientName&am=${totalCost}`;
+                document.getElementById("upiLink").href = upiLink;
             }
         }
 
