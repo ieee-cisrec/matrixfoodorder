@@ -501,7 +501,10 @@
                 menulist: menu_list,
                 totalcost: total_cost
             };
-
+	    if(total_cost == 0){
+                alert("Menu list cannot be empty!");
+                return;
+            }
             const d = new Date();
 		    let day = d.getDay();
 		    let Hours = d.getHours();
