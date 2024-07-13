@@ -26,7 +26,6 @@ function order(link){
     const b= link;
    swal({title:"Note!",
           text:`Please fill the form correctly
-                Conformation message will be sent to your email
                 For any ordering issues only
                 Contact: +91 6383577376 , +91 9095779297
                 [Not for any other purpose]
