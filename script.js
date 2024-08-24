@@ -1,3 +1,4 @@
+alert("Due to concert, there is no food order today!);
 let count = 0;
 function guidelines(){
     let gui = document.getElementById('gui');
