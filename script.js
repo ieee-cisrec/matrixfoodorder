@@ -1,4 +1,4 @@
-alert("Due to concert, there is no food order today!");
+alert("Due to Server issues,We can't take orders.We will be fix it within upcoming weeks");
 let count = 0;
 function guidelines(){
     let gui = document.getElementById('gui');
