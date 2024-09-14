@@ -1,4 +1,4 @@
-alert("Due to Server issues,We can't take orders.We will be fix it within upcoming weeks");
+alert("Fixed Issues and Bugs v2.0");
 let count = 0;
 function guidelines(){
     let gui = document.getElementById('gui');
