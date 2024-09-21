@@ -40,7 +40,7 @@ function order(link){
         window.location.href= b;
 }}
 
-const a = [1,1,0,1];
+const a = [0,1,0,1];
 // 0 - #Hotel_1, 1 - #Hotel_2, 2 - #Hotel_3,3 - #Hotel_4
 console.log("Automation - ON");
 setInterval(automate,1000);
