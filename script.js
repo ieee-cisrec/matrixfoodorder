@@ -1,4 +1,4 @@
-
+alert('Kindly Verify your order from Details Section once you have submitted the form');
 let count = 0;
 function guidelines(){
     let gui = document.getElementById('gui');
