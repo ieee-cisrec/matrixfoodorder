@@ -1,4 +1,7 @@
-alert('Kindly Verify your order from Details Section once you have submitted the form');
+alert('To ensure trust and transparency amoung food orders, We will add another layer of security.
+Website Status:
+Security maintenance undergoing...
+');
 let count = 0;
 function guidelines(){
     let gui = document.getElementById('gui');
