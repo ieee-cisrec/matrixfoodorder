@@ -1,5 +1,4 @@
-alert('To ensure trust and transparency among food orders, We will add another layer of security.Website Status:Security maintenance undergoing...');
-let count = 0;
+let count = 0;
 function guidelines(){
     let gui = document.getElementById('gui');
     let but = document.getElementById('butg');
